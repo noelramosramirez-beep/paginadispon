@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurantes - Turismo Taxco</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f4f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .restaurante {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .restaurante:hover {
+      transform: scale(1.03);
+    }
+
+    .restaurante img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 15px;
+    }
+
+    .info h3 {
+      margin-top: 0;
+      color: #5a3e36;
+    }
+
+    .info p {
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .info .contacto {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #5a3e36;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <main>
+    <section class="contenedor">
+      <div class="restaurante">
+        <img src="https://images.unsplash.com/photo-1601924638867-3ec4a2769e37" alt="Restaurante Del Ángel Inn">
+        <div class="info">
+          <h3>Restaurante Del Ángel Inn</h3>
+          <p>Ubicado junto a la iglesia de Santa Prisca, famoso por su vista panorámica y su menú tradicional mexicano.</p>
+          <p class="contacto">📍 Plazuela de San Juan 10, Centro | ☎ (762) 622-1200</p>
+        </div>
+      </div>
+
+      <div class="restaurante">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Restaurante Rosa Mexicano">
+        <div class="info">
+          <h3>Rosa Mexicano</h3>
+          <p>Ambiente familiar con platillos típicos y una decoración que resalta la cultura taxqueña.</p>
+          <p class="contacto">📍 Calle Hidalgo 5, Centro | ☎ (762) 622-2500</p>
+        </div>
+      </div>
+
+      <div class="restaurante">
+        <img src="https://images.unsplash.com/photo-1600891964091-0a8be7cfc76e" alt="Restaurante La Parroquia">
+        <div class="info">
+          <h3>La Parroquia</h3>
+          <p>Con una de las mejores vistas al zócalo, ideal para disfrutar de café y postres típicos de la región.</p>
+          <p class="contacto">📍 Plaza Borda 8, Centro | ☎ (762) 622-3000</p>
+        </div>
+      </div>
+
+      <div class="restaurante">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Restaurante Sabor Guerrero">
+        <div class="info">
+          <h3>Sabor Guerrero</h3>
+          <p>Especializado en cocina guerrerense, ofrece pozole verde, mole y platillos típicos con un toque casero.</p>
+          <p class="contacto">📍 Benito Juárez 12, Centro | ☎ (762) 622-1800</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Turismo Taxco - Restaurantes Recomendados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

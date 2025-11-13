@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turismo Taxco</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #faf7f3;
+      color: #333;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #5a3e36;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+
+    /* Panel de descripción */
+    .panel {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      text-align: center;
+    }
+
+    /* Carrusel */
+    .carrusel {
+      position: relative;
+      max-width: 1000px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .carrusel img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carrusel img.activo {
+      display: block;
+    }
+
+    .btn-carrusel {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .btn-carrusel:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    /* Contacto */
+    .contacto {
+      background-color: #5a3e36;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .contacto h3 {
+      margin-bottom: 15px;
+      font-size: 1.6em;
+    }
+
+    .contacto p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+
+    footer {
+      background-color: #3a2722;
+      color: #ddd;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <header>
+    <h1>Turismo Taxco</h1>
+  </header>
+
+  <section class="panel">
+    <h2>Bienvenidos a la magia de Taxco</h2>
+    <p>
+      Descubre la belleza colonial, la riqueza cultural y la tradición platera de Taxco de Alarcón.
+      Este sitio está diseñado para que explores sus encantos, conozcas sus fiestas, y descubras
+      los atractivos turísticos que lo hacen único en México.
+    </p>
+  </section>
+
+  <div class="carrusel">
+    <img src="R.jpg" class="activo" alt="Vista panorámica de Taxco">
+    <img src="cristo.jpg" alt="Iglesia de Santa Prisca">
+    <img src="descarga.jpg" alt="Calle empedrada de Taxco">
+    <img src="images.jpg" alt="Fiestas en Taxco">
+
+    <button class="btn-carrusel prev">&#10094;</button>
+    <button class="btn-carrusel next">&#10095;</button>
+  </div>
+
+  <section class="panel">
+    <h2>La región de Taxco</h2>
+    <p>
+      Taxco de Alarcón, ubicado en el norte del estado de Guerrero, es famoso por su arquitectura colonial
+      y su tradición platera. Rodeado de montañas, ofrece vistas espectaculares y una atmósfera que combina
+      historia, cultura y hospitalidad. Su iglesia de Santa Prisca es un ícono del barroco novohispano.
+    </p>
+  </section>
+
+  <section class="contacto">
+    <h3>Contáctanos</h3>
+    <p><strong>Dirección:</strong> Centro Histórico, Taxco de Alarcón, Guerrero</p>
+    <p><strong>Teléfono:</strong> +52 762 622 1234</p>
+    <p><strong>Email:</strong> turismo.taxco@gmail.com</p>
+    <p><strong>Horario:</strong> Lunes a Domingo, 9:00 a.m. - 7:00 p.m.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Turismo Taxco - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // --- Script del carrusel ---
+    const imagenes = document.querySelectorAll('.carrusel img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+
+    function mostrarImagen(n) {
+      imagenes.forEach(img => img.classList.remove('activo'));
+      imagenes[n].classList.add('activo');
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen(index);
+    });
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % imagenes.length;
+      mostrarImagen(index);
+    });
+
+    setInterval(() => {
+      index = (index + 1) % imagenes.length;
+      mostrarImagen(index);
+    }, 4000);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
